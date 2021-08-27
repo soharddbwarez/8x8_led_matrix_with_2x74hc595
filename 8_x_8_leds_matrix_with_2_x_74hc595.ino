@@ -29,7 +29,7 @@
 // - GNDs shift register latch pin is connected to PWM 3 (pin 3)
 // - Data pins of both shift registers are connected to pin 51 (digital pin)
 // - Clock pins of both shift registers are connected to pin 52 (digital pin)
-// * Changed the degitalWrite into using direct PORT access instead
+// * Changed the digitalWrite into using direct PORT access instead
 // The result is even faster shifting and leds control.
 
 // ----------------------------------------------------------------------------------------
@@ -45,13 +45,24 @@
 //   preventing me from compiling the code and upload it without getting errors.
 // - The final code here does work on the Arduino Nano and will compile and 
 //   upload without any problems.
+// - I've added the notes that you're reading now and lots of comments to
+//   explain what I've done and to help you along making sense of the code
+//   and to make it as easy as I could think of for you to immediately
+//   recognize where I made changes and I left most of the original code
+//   for the MEGA 2560 intact, it's only commented out so it doesn't compile
+//   those parts that are not necessary for the Nano.
 //
 // It works like this on the Arduino Nano:
 // - VCCs shift register latch pin is connected to PWM 2 (pin D5)
 // - GNDs shift register latch pin is connected to PWM 1 (pin D3)
+// - Data pins of both shift registers are connected to PB4 (pin D11)
+// - Clock pins of both shift registers are connected to PB5 (pin D13)
+// - Needed to change the direct PORT access to use PORTD instead
+// - no compromise has been made to keep the faster shifting and LED control.
 //
-// You can find me on GitHub where I'm sharing this Arduino project and some
-// forks for Arduino that contain changes that I made to make things work for
+// You can find me on GitHub where I'm sharing this Arduino project linked here:
+// https://github.com/soharddbwarez/8x8_led_matrix_with_2x74hc595
+// and some forks for Arduino that contain changes that I made to make things work for
 // the hardware that I'm using which is quite challanging to say the least.
 // Here's my GitHub Profile page link: https://github.com/soharddbwarez
 // 
